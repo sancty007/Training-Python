@@ -16,7 +16,7 @@ def ajouter_tache():
             continue     
         else :
             print("Reponse invalide ")  
-    Affiche_menu()# Affiche du menu Principal
+    Affiche_menu()
             
 def afficher_taches():
     if len(taches) == 0 :
