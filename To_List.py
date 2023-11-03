@@ -55,9 +55,9 @@ def marquer_terminee():
 menu_liste =["Ajouter une tache ","Afficher les taches", 
              "Marquer une tache comme terminee" , "Quitter"]
 def Affiche_menu():
-    for i in range(0,len(menu_liste)):
-        print(f"{str(i)}  : {menu_liste[i]} \n")
-    Faire_choix() 
+     for i,k in enumerate(menu_liste) :
+        print(f"{i}: {k} \n")
+        Faire_choix() 
 
 def Faire_choix():
     numero_List=[i for i in range(4)]
