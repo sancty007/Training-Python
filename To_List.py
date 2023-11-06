@@ -55,12 +55,13 @@ def marquer_terminee():
 menu_liste =["Ajouter une tache ","Afficher les taches", 
              "Marquer une tache comme terminee" , "Quitter"]
 def Affiche_menu():
-     for i,k in enumerate(menu_liste) :
+    for i,k in enumerate(menu_liste) :
         print(f"{i}: {k} \n")
-        Faire_choix() 
+    Faire_choix() 
+
+liste_Fonction=[ajouter_tache,afficher_taches,marquer_terminee,exit]
 
 def Faire_choix():
-    numero_List=[i for i in range(4)]
     while True :
         try :
             choix_utilisateur =int(input("Entrez votre choix :"))
@@ -68,18 +69,14 @@ def Faire_choix():
         except Exception as e :
             print("Erreur de type : Entrez un chiffre valide " )
     valide =True 
+
     while valide == True:
-        if choix_utilisateur ==  numero_List[0]:
-            ajouter_tache()
-        elif choix_utilisateur ==  numero_List[1] :
-            afficher_taches()
-        elif choix_utilisateur ==  numero_List[2] :
-            marquer_terminee()
-        elif choix_utilisateur ==  numero_List[3] :
-            exit()
-        else :
-            continue
-    
+        for index in range(0,len(liste_Fonction)):
+            if choix_utilisateur == index :
+                liste_Fonction[index]()
+            else :
+                continue 
+        
 
 
 # Affiche Liste 
