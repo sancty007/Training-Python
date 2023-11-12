@@ -17,12 +17,13 @@ def ajouter_tache():
         else :
             print("Reponse invalide ")  
     Affiche_menu()
-            
+
 def afficher_taches():
-    if len(taches) == 0 :
+    if len(taches) == 0:
         print("La liste est vide ...")
-    else :
-        print(taches)
+    else:
+        for tache in taches:
+            print(tache)
     Affiche_menu()     
 
 def supprimer_tache():

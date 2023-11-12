@@ -15,7 +15,7 @@ def ispalindrome (phrase :str):
     # Retire les ponctuations et caractère speciaux , et met chaque element en miniscule avec lower()
     noponctuattion = "".join(e.lower() for e in phrase if e.isalnum())
 
-    inversePhrase= noponctuattion[::-1]
+    inversePhrase= noponctuattion[::-1] 
 
     # condition de verification si l'inverse est egale à la phrase originale 
     if inversePhrase == noponctuattion : 
