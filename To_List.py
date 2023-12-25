@@ -26,9 +26,6 @@ def afficher_taches():
             print(tache)
     Affiche_menu()     
 
-def supprimer_tache():
-    pass
-
 def marquer_terminee():
     valide = True
     inter = [i for i in range (len(taches))]
