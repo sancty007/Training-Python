@@ -23,15 +23,13 @@ class Solution(object):
         for i in range(n - 1) :
             for j in range(i+1 , n) :
                 if list_simple[i] + list_simple[j] == target :
-                    return [i,j]
+                    return [indice[i],indice[j]]
 
 
 
 
 
-#result = solution.twoSum(maList,target)
 
-#print(result)
 solution =Solution()
 result = solution.twoSum(maList, target)
 
