@@ -9,9 +9,6 @@ listAnagramme = ["art","are","bat","ant","nap","top","dog","rca"]
 word = "arc"
 listWord2 = ["".join(i) for i in itertools.permutations(word)]
 
-print(listWord2)
-print(listAnagramme)
-
 def anagramme_verify():
     i = 0
     while (i < len(listWord2)) :
@@ -19,7 +16,7 @@ def anagramme_verify():
             return True
         i+=1
     else:
-            return False
+        return False
    
 
 if (anagramme_verify()) : 
