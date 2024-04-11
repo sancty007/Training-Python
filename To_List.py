@@ -1,84 +1,81 @@
-# creation  de la list 
+# Déclaration d'une liste vide pour stocker les tâches
+taches = []
 
-taches =[] 
-   
+# Fonction pour ajouter une tâche à la liste
 def ajouter_tache():
     valide = True
-    reponse =""
-    while valide == True:
+    while valide:
         ajouterListe = input("Ajouter une tache à la liste : ")
         taches.append(ajouterListe)
-        print("voulez vous continuer à ajouter des element?")
-        reponse=input("oui|Oui ou Non|non : ").lower()
-        if reponse =="non" :
+        print("Voulez-vous continuer à ajouter des éléments ?")
+        reponse = input("oui|Oui ou Non|non : ").lower()
+        if reponse == "non":
             valide = False
-        elif reponse =="oui":
-            continue     
-        else :
-            print("Reponse invalide ")  
+        elif reponse == "oui":
+            continue
+        else:
+            print("Réponse invalide ")
     Affiche_menu()
 
+# Fonction pour afficher les tâches
 def afficher_taches():
     if len(taches) == 0:
         print("La liste est vide ...")
     else:
         for tache in taches:
             print(tache)
-    Affiche_menu()     
+    Affiche_menu()
 
+# Fonction pour marquer une tâche comme terminée
 def marquer_terminee():
     valide = True
-    inter = [i for i in range (len(taches))]
-    while valide == True :
-        try :
-            numTache=int(input("Entrez le numero de la tâche à supprimer : "))
-            """ if numTache not in inter:
-                print("Probleme d'index ...")
-                #continue """
+    inter = [i for i in range(len(taches))]
+    while valide:
+        try:
+            numTache = int(input("Entrez le numéro de la tâche à supprimer : "))
             if numTache in inter:
                 del taches[numTache]
                 valide = False
-                print("Tache Terminee... ")
-            elif  len(taches)== 0:
-               print("la liste est vide ")
-               break
-            else :
-                print("probleme inconnu contactez le dev") 
-        except :
-            print("index invalide  : n'est pas un nombre ")
+                print("Tâche Terminée... ")
+            elif len(taches) == 0:
+                print("La liste est vide ")
+                break
+            else:
+                print("Problème inconnu, contactez le développeur") 
+        except:
+            print("Index invalide : ce n'est pas un nombre ")
     Affiche_menu()
 
+# Liste des options du menu
+menu_liste = ["Ajouter une tache ", "Afficher les taches", 
+              "Marquer une tache comme terminée", "Quitter"]
 
-        
-menu_liste =["Ajouter une tache ","Afficher les taches", 
-             "Marquer une tache comme terminee" , "Quitter"]
+# Fonction pour afficher le menu
 def Affiche_menu():
-    for i,k in enumerate(menu_liste) :
+    for i, k in enumerate(menu_liste):
         print(f"{i}: {k} \n")
     Faire_choix() 
 
-liste_Fonction=[ajouter_tache,afficher_taches,marquer_terminee,exit]
+# Liste des fonctions correspondant aux options du menu
+liste_Fonction = [ajouter_tache, afficher_taches, marquer_terminee, exit]
 
+# Fonction pour que l'utilisateur fasse un choix
 def Faire_choix():
-    while True :
-        try :
-            choix_utilisateur =int(input("Entrez votre choix :"))
+    while True:
+        try:
+            choix_utilisateur = int(input("Entrez votre choix :"))
             break
-        except Exception as e :
-            print("Erreur de type : Entrez un chiffre valide " )
-    valide =True 
+        except Exception as e:
+            print("Erreur de type : Entrez un chiffre valide ")
+    valide = True 
 
-    while valide == True:
-        for index in range(0,len(liste_Fonction)):
-            if choix_utilisateur == index :
+    while valide:
+        for index in range(len(liste_Fonction)):
+            if choix_utilisateur == index:
                 liste_Fonction[index]()
-            else :
-                continue 
-        
+                valide = False  # Sortir de la boucle une fois que l'option est exécutée
+            else:
+                continue
 
-
-# Affiche Liste 
-
-
+# Affichage initial du menu
 Affiche_menu()
-
