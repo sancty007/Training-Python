@@ -67,7 +67,7 @@ def Affiche_menu():
     Faire_choix()
 
 ## Fonction pour modifier une tache 
-def Modifier_tach():
+def modifier_tach():
     valide = True
     inter = [i for i in range(len(taches))]
     while valide:
@@ -83,7 +83,7 @@ def Modifier_tach():
     Affiche_menu()
 
 # Liste des fonctions correspondant aux options du menu
-liste_Fonction = [ajouter_tache, afficher_taches, marquer_terminee,Modifier_tach, exit]
+liste_Fonction = [ajouter_tache, afficher_taches, marquer_terminee,modifier_tach, exit]
 
 
 # Fonction pour que l'utilisateur fasse un choix
