@@ -12,7 +12,7 @@ def ajouter_tache():
 
             print("Voulez-vous continuer à ajouter des éléments ?")
 
-            reponse = input("oui|OUI|O ou NON|non|N : ").lower()
+            reponse = input("oui|OUI|O  ou  NON|non|N : ").lower()
 
             if reponse == "non" or reponse == "n":
                 valide = False
