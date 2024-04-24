@@ -5,7 +5,7 @@ def entrerContenue():
     return input("Entrez le contenu du fichier : ")
 
 def suppressionCaractereSpeciaux(phrase):
-    # Retire les ponctuations et caractères spéciaux
+    # retire les ponctuations et caractères spéciaux
     return "".join(e for e in phrase if e.isalnum())
 
 def ecritDansFichier(nom_fichier, contenu):
